@@ -19,7 +19,6 @@ public class Enemy {
 
     //移除死掉或者飞出界面的敌机
     public void killed() {
-        MyPlane.sc++;
         if (items != null && items.length > 0) {
             //敌机死后，释放奖品
             for (int i = 0; i < items.length; i++) {

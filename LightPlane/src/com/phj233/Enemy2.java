@@ -43,6 +43,7 @@ public class Enemy2 extends Enemy{
                 imageIndex++;
                 if(imageIndex>=this.dieImages.length) {
                     //敌机死了
+                    MyPlane.sc+=2;
                     killed();
                 }
 
