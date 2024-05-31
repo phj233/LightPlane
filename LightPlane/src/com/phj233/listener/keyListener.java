@@ -1,9 +1,12 @@
-package com.phj233;
+package com.phj233.listener;
+
+import com.phj233.common.BaseFrame;
+import com.phj233.common.State;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-import static com.phj233.BaseFrame.state;
+import static com.phj233.common.BaseFrame.state;
 
 public class keyListener implements KeyListener {
     public BaseFrame baseFrame;
@@ -20,6 +23,14 @@ public class keyListener implements KeyListener {
                 case 2 -> state = 1;
                 default -> {
                 }
+            }
+        }
+        //按下ESC键绘制暂停界面
+        if(e.getKeyCode()==27){
+            if (state == State.RUNNING.getState()) {
+                state = State.PAUSE.getState();
+            } else if (state == State.PAUSE.getState()) {
+                state = State.RUNNING.getState();
             }
         }
     }

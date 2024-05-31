@@ -1,4 +1,6 @@
-package com.phj233;
+package com.phj233.listener;
+
+import com.phj233.common.BaseFrame;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
