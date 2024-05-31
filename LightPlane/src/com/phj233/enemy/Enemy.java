@@ -1,4 +1,7 @@
-package com.phj233;
+package com.phj233.enemy;
+import com.phj233.item.Item;
+import com.phj233.common.MyPlane;
+
 import java.awt.*;
 public class Enemy {
     //使用MyPanel的原因是，要调用MyPanel中的timer
