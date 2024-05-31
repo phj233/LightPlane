@@ -1,4 +1,7 @@
-package com.phj233;
+package com.phj233.item;
+
+import com.phj233.common.BaseFrame;
+import com.phj233.common.MyPlane;
 
 import java.awt.*;
 
@@ -38,7 +41,7 @@ public class Item {
             //奖品下移
             y++;
             //奖品移动超出窗口，则销毁
-            if(this.y>=BaseFrame.frameHeight) {
+            if(this.y>= BaseFrame.frameHeight) {
                 this.myPlane.items.remove(this);
             }
         }

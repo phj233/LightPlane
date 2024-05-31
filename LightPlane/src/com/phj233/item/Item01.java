@@ -1,4 +1,6 @@
-package com.phj233;
+package com.phj233.item;
+
+import com.phj233.common.MyPlane;
 
 import java.awt.*;
 
