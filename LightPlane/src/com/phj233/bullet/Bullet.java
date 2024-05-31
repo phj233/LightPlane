@@ -1,4 +1,7 @@
-package com.phj233;
+package com.phj233.bullet;
+
+import com.phj233.common.MyPlane;
+import com.phj233.enemy.Enemy;
 
 import java.awt.*;
 
