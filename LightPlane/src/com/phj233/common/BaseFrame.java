@@ -1,13 +1,21 @@
-package com.phj233;
+package com.phj233.common;
+
+import com.phj233.enemy.Enemy;
+import com.phj233.enemy.Enemy1;
+import com.phj233.enemy.Enemy2;
+import com.phj233.enemy.Enemy3;
+import com.phj233.listener.FrameMouseListener;
+import com.phj233.listener.keyListener;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class BaseFrame extends JFrame{
-    public static int state=1;
+    public static int state = State.RUNNING.getState();
     public static int frameHeight=700;
     public static int frameWidth=480;
-    public MyPlane myPlane;
+
+    public static MyPlane myPlane;
     //鼠标监听器
     public FrameMouseListener frameMouseListener;
     public keyListener keylistener;
@@ -21,8 +29,8 @@ public class BaseFrame extends JFrame{
         this.keylistener.baseFrame=this;
         this.addKeyListener(this.keylistener);
     }
-    public void addEnemyType(Class c){
-        this.myPlane.enemyType.add(c);
+    public void addEnemyType(Enemy c){
+        myPlane.enemyType.add(c);
     }
     public BaseFrame(){
         super("雷霆战机");
@@ -33,17 +41,17 @@ public class BaseFrame extends JFrame{
         //设置布局方式
         setLayout(null);
         //创建mypanel对象
-        this.myPlane=new MyPlane();
-        this.myPlane.setBounds(0,0,frameWidth,frameHeight);
+        myPlane=new MyPlane();
+        myPlane.setBounds(0,0,frameWidth,frameHeight);
         //将组件添加到窗口中
-        this.add(this.myPlane);
+        this.add(myPlane);
         //设置监听器
         setTouchListener();
         setKeyListener();
         //添加敌机类型
-        addEnemyType(Enemy1.class);
-        addEnemyType(Enemy2.class);
-        addEnemyType(Enemy3.class);
+        addEnemyType(new Enemy1(myPlane));
+        addEnemyType(new Enemy2(myPlane));
+        addEnemyType(new Enemy3(myPlane));
         //设置窗口
         setVisible(true);
         //设置窗口关闭行为

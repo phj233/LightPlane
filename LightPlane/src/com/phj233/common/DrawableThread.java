@@ -1,4 +1,4 @@
-package com.phj233;
+package com.phj233.common;
 
 public class DrawableThread extends Thread{
     public MyPlane myPlane;
@@ -11,7 +11,7 @@ public class DrawableThread extends Thread{
             try {
                 this.currentThread().sleep(1);
             }catch (InterruptedException e){
-                e.printStackTrace();
+                throw new RuntimeException(e);
             }
         }
     }
